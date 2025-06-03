@@ -1,0 +1,1123 @@
+/* NVIDIA-themed Microsoft Website with Simplified Modern Hero */
+
+/* Reset and Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* NVIDIA Color Palette */
+:root {
+  --nvidia-green: #76b900;
+  --nvidia-dark-green: #5d9400;
+  --nvidia-light-green: #8bc500;
+  --nvidia-black: #000000;
+  --nvidia-white: #ffffff;
+  --nvidia-gray: #1a1a1a;
+  --nvidia-light-gray: #f5f5f5;
+  --nvidia-medium-gray: #666666;
+  --nvidia-dark-blue: #0c1c29;
+  --nvidia-blue: #1a73e8;
+  --nvidia-light-blue: #4fc3f7;
+  --nvidia-gradient-start: #0c1c29;
+  --nvidia-gradient-end: #1a3c5a;
+
+  /* H&M Style Variables */
+  --border-radius: 0;
+  --transition: all 0.3s ease;
+  --shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  --shadow-hover: 0 4px 16px rgba(118, 185, 0, 0.2);
+}
+
+body {
+  font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, "Roboto", sans-serif;
+  line-height: 1.6;
+  color: var(--nvidia-black);
+  background: var(--nvidia-white);
+  font-weight: 400;
+  overflow-x: hidden;
+}
+
+/* Header - H&M Minimalist Style with NVIDIA Colors */
+.header {
+  background: var(--nvidia-black);
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  border-bottom: 2px solid var(--nvidia-green);
+}
+
+.nav-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 60px;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: var(--nvidia-white);
+}
+
+.microsoft-logo {
+  height: 32px;
+  margin-right: 12px;
+}
+
+.logo-text {
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: -0.5px;
+}
+
+.nav-menu {
+  display: flex;
+  list-style: none;
+  gap: 40px;
+}
+
+.nav-menu a {
+  color: var(--nvidia-white);
+  text-decoration: none;
+  font-weight: 400;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding: 20px 0;
+  transition: var(--transition);
+  position: relative;
+}
+
+.nav-menu a::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--nvidia-green);
+  transition: var(--transition);
+}
+
+.nav-menu a:hover {
+  color: var(--nvidia-green);
+}
+
+.nav-menu a:hover::after {
+  width: 100%;
+}
+
+.user-actions {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  position: relative;
+}
+
+.search-btn,
+.sign-in-btn {
+  background: none;
+  border: none;
+  color: var(--nvidia-white);
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding: 8px 16px;
+  transition: var(--transition);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.search-btn:hover,
+.sign-in-btn:hover {
+  color: var(--nvidia-green);
+}
+
+/* Search Container */
+.search-container {
+  display: none;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background: var(--nvidia-white);
+  border: 2px solid var(--nvidia-green);
+  padding: 20px;
+  min-width: 300px;
+  z-index: 1001;
+}
+
+.search-container.active {
+  display: block;
+}
+
+.search-input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid var(--nvidia-medium-gray);
+  font-size: 16px;
+  outline: none;
+  transition: var(--transition);
+}
+
+.search-input:focus {
+  border-color: var(--nvidia-green);
+}
+
+/* Main Content */
+.main-content {
+  margin-top: 60px;
+}
+
+/* Top Banner */
+.top-banner {
+  background: linear-gradient(135deg, var(--nvidia-green) 0%, var(--nvidia-dark-green) 100%);
+  color: var(--nvidia-white);
+  padding: 12px 20px;
+  position: relative;
+  z-index: 999;
+  border-bottom: 1px solid rgba(118, 185, 0, 0.3);
+}
+
+.banner-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+
+.banner-text {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex: 1;
+}
+
+.banner-icon {
+  font-size: 1.2rem;
+}
+
+.banner-actions {
+  display: flex;
+  gap: 12px;
+}
+
+.banner-dismiss {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: var(--nvidia-white);
+  padding: 8px 16px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.banner-dismiss:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.banner-cta {
+  background: var(--nvidia-white);
+  color: var(--nvidia-green);
+  border: none;
+  padding: 8px 16px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.banner-cta:hover {
+  background: var(--nvidia-light-gray);
+}
+
+/* ===== SIMPLIFIED MODERN HERO SECTION ===== */
+.hero-modern {
+  position: relative;
+  min-height: 600px;
+  background: var(--nvidia-dark-blue);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+
+/* Background Elements */
+.hero-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.bg-gradient {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, var(--nvidia-gradient-start) 0%, var(--nvidia-gradient-end) 100%);
+}
+
+.bg-grid {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(rgba(118, 185, 0, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(118, 185, 0, 0.05) 1px, transparent 1px);
+  background-size: 50px 50px;
+}
+
+/* Hero Content */
+.hero-container {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 60px 20px;
+}
+
+.hero-content {
+  display: flex;
+  align-items: center;
+  gap: 60px;
+}
+
+/* Left Side - Text Content */
+.hero-text {
+  flex: 1;
+  max-width: 550px;
+}
+
+.hero-text h1 {
+  font-size: 3.5rem;
+  font-weight: 700;
+  line-height: 1.1;
+  color: var(--nvidia-white);
+  margin-bottom: 24px;
+  letter-spacing: -1px;
+  animation: fadeInUp 0.8s ease;
+}
+
+.hero-text .highlight {
+  background: linear-gradient(90deg, var(--nvidia-green), var(--nvidia-light-green));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.hero-subtitle {
+  font-size: 1.2rem;
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 32px;
+  animation: fadeInUp 0.8s ease 0.2s both;
+}
+
+.hero-features {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-bottom: 32px;
+  animation: fadeInUp 0.8s ease 0.4s both;
+}
+
+.feature {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 8px 16px;
+  border-radius: 50px;
+  color: var(--nvidia-white);
+  font-size: 14px;
+}
+
+.feature svg {
+  color: var(--nvidia-green);
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 16px;
+  animation: fadeInUp 0.8s ease 0.6s both;
+}
+
+.cta-button {
+  padding: 14px 28px;
+  border: none;
+  font-size: 14px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: var(--transition);
+  text-decoration: none;
+  display: inline-block;
+  text-align: center;
+}
+
+.cta-button.primary {
+  background: var(--nvidia-green);
+  color: var(--nvidia-white);
+}
+
+.cta-button.primary:hover {
+  background: var(--nvidia-light-green);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(118, 185, 0, 0.3);
+}
+
+.cta-button.secondary {
+  background: transparent;
+  color: var(--nvidia-white);
+  border: 2px solid var(--nvidia-white);
+}
+
+.cta-button.secondary:hover {
+  background: rgba(255, 255, 255, 0.1);
+  transform: translateY(-2px);
+}
+
+/* Right Side - Visual Content */
+.hero-visual {
+  flex: 1;
+  position: relative;
+  animation: fadeInRight 1s ease;
+}
+
+.app-showcase {
+  position: relative;
+}
+
+.app-icons {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 24px;
+  justify-content: center;
+}
+
+.app-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  overflow: hidden;
+  transition: var(--transition);
+  border: 2px solid var(--nvidia-green);
+  box-shadow: 0 5px 15px rgba(118, 185, 0, 0.2);
+}
+
+.app-icon:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(118, 185, 0, 0.3);
+}
+
+.app-icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.device-frame {
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+  border: 2px solid rgba(255, 255, 255, 0.1);
+}
+
+.device-screen {
+  width: 100%;
+  display: block;
+}
+
+/* Animation Keyframes */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Mobile Menu */
+.mobile-menu-btn {
+  display: none;
+  flex-direction: column;
+  gap: 4px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+}
+
+.mobile-menu-btn span {
+  width: 24px;
+  height: 2px;
+  background: var(--nvidia-white);
+  transition: var(--transition);
+}
+
+/* ===== EXISTING SECTIONS (unchanged) ===== */
+
+/* NVIDIA-Style Sections */
+.section-nvidia {
+  padding: 100px 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+.section-nvidia.dark {
+  background: linear-gradient(135deg, var(--nvidia-black) 0%, var(--nvidia-gray) 100%);
+  color: var(--nvidia-white);
+}
+
+.section-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.section-header h2 {
+  font-size: 3rem;
+  font-weight: 300;
+  margin-bottom: 16px;
+  letter-spacing: -1px;
+}
+
+.section-header p {
+  font-size: 1.2rem;
+  max-width: 700px;
+  margin: 0 auto;
+  color: var(--nvidia-medium-gray);
+}
+
+.section-nvidia.dark .section-header p {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.section-content {
+  display: flex;
+  align-items: center;
+  gap: 60px;
+}
+
+.section-content.reversed {
+  flex-direction: row-reverse;
+}
+
+.content-text {
+  flex: 1;
+}
+
+.content-text h2 {
+  font-size: 2.5rem;
+  font-weight: 300;
+  margin-bottom: 24px;
+  letter-spacing: -1px;
+}
+
+.content-text p {
+  font-size: 1.2rem;
+  margin-bottom: 32px;
+  line-height: 1.6;
+}
+
+.section-nvidia.dark .content-text p {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.content-visual {
+  flex: 1;
+  position: relative;
+}
+
+.visual-container {
+  position: relative;
+  padding: 20px;
+}
+
+.main-visual {
+  width: 100%;
+  border-radius: 8px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+  border: 2px solid var(--nvidia-green);
+}
+
+.visual-accent {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  background: var(--nvidia-green);
+  opacity: 0.2;
+  border-radius: 50%;
+  filter: blur(30px);
+}
+
+.visual-accent.top-right {
+  top: 0;
+  right: 0;
+}
+
+.visual-accent.bottom-left {
+  bottom: 0;
+  left: 0;
+}
+
+.visual-accent.top-left {
+  top: 0;
+  left: 0;
+}
+
+.visual-accent.bottom-right {
+  bottom: 0;
+  right: 0;
+}
+
+/* NVIDIA Cards */
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+  gap: 40px;
+}
+
+.nvidia-card {
+  display: flex;
+  background: var(--nvidia-white);
+  border: 1px solid rgba(118, 185, 0, 0.2);
+  border-radius: 8px;
+  overflow: hidden;
+  transition: var(--transition);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.nvidia-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px rgba(118, 185, 0, 0.2);
+  border-color: var(--nvidia-green);
+}
+
+.card-content {
+  flex: 1;
+  padding: 40px;
+}
+
+.card-content h3 {
+  font-size: 1.8rem;
+  font-weight: 500;
+  margin-bottom: 16px;
+  color: var(--nvidia-black);
+}
+
+.card-content p {
+  font-size: 1.1rem;
+  margin-bottom: 24px;
+  color: var(--nvidia-medium-gray);
+  line-height: 1.6;
+}
+
+.card-image {
+  flex: 1;
+  overflow: hidden;
+}
+
+.card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: var(--transition);
+}
+
+.nvidia-card:hover .card-image img {
+  transform: scale(1.05);
+}
+
+.nvidia-button {
+  display: inline-block;
+  padding: 12px 24px;
+  background: var(--nvidia-green);
+  color: var(--nvidia-white);
+  text-decoration: none;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 14px;
+  transition: var(--transition);
+  border: none;
+  cursor: pointer;
+}
+
+.nvidia-button:hover {
+  background: var(--nvidia-dark-green);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(118, 185, 0, 0.2);
+}
+
+/* Feature Lists */
+.feature-list {
+  list-style: none;
+  margin: 0 0 32px;
+}
+
+.feature-list li {
+  padding: 8px 0 8px 30px;
+  position: relative;
+  font-size: 1.1rem;
+}
+
+.feature-list li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: var(--nvidia-green);
+  font-weight: bold;
+}
+
+.feature-list.light li::before {
+  color: var(--nvidia-light-green);
+}
+
+/* Products Grid */
+.products-grid-section {
+  padding: 100px 20px;
+  background: var(--nvidia-light-gray);
+}
+
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+}
+
+.product-card {
+  background: var(--nvidia-white);
+  border-radius: 8px;
+  overflow: hidden;
+  transition: var(--transition);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.product-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(118, 185, 0, 0.2);
+}
+
+.product-image {
+  height: 200px;
+  overflow: hidden;
+}
+
+.product-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: var(--transition);
+}
+
+.product-card:hover .product-image img {
+  transform: scale(1.05);
+}
+
+.product-info {
+  padding: 30px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.product-info h3 {
+  font-size: 1.5rem;
+  font-weight: 500;
+  margin-bottom: 16px;
+  color: var(--nvidia-black);
+}
+
+.product-info p {
+  font-size: 1rem;
+  margin-bottom: 24px;
+  color: var(--nvidia-medium-gray);
+  line-height: 1.6;
+  flex: 1;
+}
+
+.product-link {
+  color: var(--nvidia-green);
+  text-decoration: none;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 14px;
+  transition: var(--transition);
+  display: inline-flex;
+  align-items: center;
+}
+
+.product-link::after {
+  content: "→";
+  margin-left: 8px;
+  transition: var(--transition);
+}
+
+.product-link:hover {
+  color: var(--nvidia-dark-green);
+}
+
+.product-link:hover::after {
+  transform: translateX(5px);
+}
+
+/* Business Grid */
+.business-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+}
+
+.business-card {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  padding: 40px 30px;
+  transition: var(--transition);
+}
+
+.business-card:hover {
+  background: rgba(255, 255, 255, 0.1);
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+  border-color: var(--nvidia-green);
+}
+
+.business-icon {
+  color: var(--nvidia-green);
+  margin-bottom: 24px;
+}
+
+.business-card h3 {
+  font-size: 1.5rem;
+  font-weight: 500;
+  margin-bottom: 16px;
+  color: var(--nvidia-white);
+}
+
+.business-card p {
+  font-size: 1rem;
+  margin-bottom: 24px;
+  color: rgba(255, 255, 255, 0.7);
+  line-height: 1.6;
+}
+
+.business-link {
+  color: var(--nvidia-light-green);
+  text-decoration: none;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 14px;
+  transition: var(--transition);
+  display: inline-flex;
+  align-items: center;
+}
+
+.business-link::after {
+  content: "→";
+  margin-left: 8px;
+  transition: var(--transition);
+}
+
+.business-link:hover {
+  color: var(--nvidia-white);
+}
+
+.business-link:hover::after {
+  transform: translateX(5px);
+}
+
+/* Footer */
+.footer {
+  background: var(--nvidia-black);
+  color: var(--nvidia-white);
+  padding: 60px 20px 20px;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 40px;
+  margin-bottom: 40px;
+}
+
+.footer-section h3 {
+  color: var(--nvidia-green);
+  margin-bottom: 20px;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.footer-section ul {
+  list-style: none;
+}
+
+.footer-section li {
+  margin-bottom: 8px;
+}
+
+.footer-section a {
+  color: rgba(255, 255, 255, 0.7);
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+.footer-section a:hover {
+  color: var(--nvidia-green);
+}
+
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 20px;
+  border-top: 1px solid var(--nvidia-gray);
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.language-selector {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.footer-links {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.footer-links a {
+  color: rgba(255, 255, 255, 0.7);
+  text-decoration: none;
+  font-size: 14px;
+  transition: var(--transition);
+}
+
+.footer-links a:hover {
+  color: var(--nvidia-green);
+}
+
+/* Modal */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 10000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+  background-color: var(--nvidia-white);
+  margin: 15% auto;
+  padding: 20px;
+  border: none;
+  width: 80%;
+  max-width: 500px;
+  border-radius: 8px;
+  position: relative;
+}
+
+.close {
+  color: var(--nvidia-medium-gray);
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+  position: absolute;
+  right: 15px;
+  top: 10px;
+}
+
+.close:hover {
+  color: var(--nvidia-black);
+}
+
+/* Notification */
+.notification {
+  position: fixed;
+  top: 80px;
+  right: 20px;
+  background: var(--nvidia-green);
+  color: var(--nvidia-white);
+  padding: 16px 24px;
+  border-radius: 8px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  z-index: 10001;
+  transform: translateX(400px);
+  transition: transform 0.3s ease;
+}
+
+.notification.show {
+  transform: translateX(0);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .hero-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .hero-text {
+    max-width: 100%;
+  }
+
+  .hero-features {
+    justify-content: center;
+  }
+
+  .hero-buttons {
+    justify-content: center;
+  }
+
+  .hero-visual {
+    margin-top: 40px;
+  }
+}
+
+@media (max-width: 768px) {
+  .nav-menu {
+    display: none;
+  }
+
+  .mobile-menu-btn {
+    display: flex;
+  }
+
+  .hero-text h1 {
+    font-size: 2.5rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1rem;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .cta-button {
+    width: 100%;
+  }
+
+  .cards-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .nvidia-card {
+    flex-direction: column;
+  }
+
+  .card-image {
+    height: 250px;
+  }
+
+  .section-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .section-content.reversed {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-text h1 {
+    font-size: 2rem;
+  }
+
+  .hero-features {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .section-header h2 {
+    font-size: 2rem;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+/* High Contrast Mode Support */
+@media (prefers-contrast: high) {
+  :root {
+    --nvidia-green: #00ff00;
+    --nvidia-black: #000000;
+    --nvidia-white: #ffffff;
+  }
+}
+
+/* Reduced Motion Support */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
