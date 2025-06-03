@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Microsoft - Cloud, Computers, Apps & Gaming</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Segoe+UI:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Top Banner -->
+    <div class="top-banner" id="topBanner">
+        <div class="banner-content">
+            <div class="banner-text">
+                <span class="banner-icon">🚀</span>
+                <span class="banner-main">Experience the future of productivity with Microsoft Copilot</span>
+            </div>
+            <div class="banner-actions">
+                <button class="banner-dismiss" onclick="closeBanner()" aria-label="Close banner">✕</button>
+                <button class="banner-cta" onclick="showNotification('Redirecting to Copilot...')">Try Copilot</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="header" id="mainHeader">
+        <nav class="nav-container">
+            <div class="logo-container">
+                <a href="index.html" class="logo" aria-label="Microsoft Home">
+                    <img src="images/microsoft.png" alt="Microsoft" class="microsoft-logo">
+                    <span class="logo-text">Microsoft</span>
+                </a>
+            </div>
+            
+            <!-- Desktop Navigation -->
+            <ul class="nav-menu" id="navMenu">
+                <li class="nav-item">
+                    <a href="#microsoft365" class="nav-link">Microsoft 365</a>
+                </li>
+                <li class="nav-item">
+                    <a href="office.html" class="nav-link">Office</a>
+                </li>
+                <li class="nav-item">
+                    <a href="copilot.html" class="nav-link">Copilot</a>
+                </li>
+                <li class="nav-item">
+                    <a href="windows.html" class="nav-link">Windows</a>
+                </li>
+                <li class="nav-item">
+                    <a href="support.html" class="nav-link">Support</a>
+                </li>
+            </ul>
+
+            <!-- User Actions -->
+            <div class="user-actions">
+                <button class="search-btn" onclick="toggleSearch()" aria-label="Search">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                    </svg>
+                    <span>Search</span>
+                </button>
+                
+                <button class="sign-in-btn" onclick="showAccountModal()">Sign in</button>
+                
+                <!-- Search Container -->
+                <div class="search-container" id="searchContainer">
+                    <div class="search-header">
+                        <input type="text" class="search-input" placeholder="Search Microsoft products..." onkeypress="handleSearch(event)" id="searchInput">
+                        <button class="search-close" onclick="toggleSearch()">✕</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <button class="mobile-menu-btn" onclick="toggleMobileMenu()" aria-label="Toggle mobile menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Simplified Modern Hero Section -->
+        <section class="hero-modern" id="heroSection">
+            <div class="hero-background">
+                <div class="bg-gradient"></div>
+                <div class="bg-grid"></div>
+            </div>
+            
+            <div class="hero-container">
+                <div class="hero-content">
+                    <div class="hero-text">
+                        <h1>Achieve the <span class="highlight">extraordinary</span></h1>
+                        <p class="hero-subtitle">Microsoft 365 delivers cloud storage, security, and Microsoft Copilot in your favorite apps – all in one plan.</p>
+                        
+                        <div class="hero-features">
+                            <div class="feature">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M9 12l2 2 4-4"/>
+                                    <circle cx="12" cy="12" r="10"/>
+                                </svg>
+                                <span>Cloud Storage</span>
+                            </div>
+                            <div class="feature">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
+                                    <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+                                </svg>
+                                <span>Advanced Security</span>
+                            </div>
+                            <div class="feature">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+                                    <path d="M2 17l10 5 10-5"/>
+                                    <path d="M2 12l10 5 10-5"/>
+                                </svg>
+                                <span>AI-Powered Tools</span>
+                            </div>
+                        </div>
+
+                        <div class="hero-buttons">
+                            <a href="#" class="cta-button primary">For 1 person</a>
+                            <a href="#" class="cta-button secondary">For up to 6 people</a>
+                        </div>
+                    </div>
+                    
+                    <div class="hero-visual">
+                        <div class="app-showcase">
+                            <div class="app-icons">
+                                <div class="app-icon word">
+                                    <img src="images/word.jpg" alt="Word">
+                                </div>
+                                <div class="app-icon excel">
+                                    <img src="images/excel.jpg" alt="Excel">
+                                </div>
+                                <div class="app-icon powerpoint">
+                                    <img src="images/ppt.jpg" alt="PowerPoint">
+                                </div>
+                                <div class="app-icon outlook">
+                                    <img src="images/outlook.jpg" alt="Outlook">
+                                </div>
+                            </div>
+                            <div class="device-frame">
+                                <img src="images/ms365.jpg" alt="Microsoft 365" class="device-screen">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Microsoft 365 Section -->
+        <section id="microsoft365" class="section-nvidia">
+            <div class="section-container">
+                <div class="section-header">
+                    <h2>Microsoft 365</h2>
+                    <p>Premium Office apps, extra cloud storage, advanced security, and more—all in one convenient subscription</p>
+                </div>
+                <div class="cards-grid">
+                    <div class="nvidia-card">
+                        <div class="card-content">
+                            <h3>For individuals</h3>
+                            <p>Premium Office apps, cloud storage, and advanced security for up to 6 people.</p>
+                            <ul class="feature-list">
+                                <li>Use across multiple devices</li>
+                                <li>Premium Office apps including Word, Excel, and PowerPoint</li>
+                                <li>1 TB of cloud storage per person</li>
+                                <li>Advanced security</li>
+                            </ul>
+                            <a href="#" class="nvidia-button">Learn more</a>
+                        </div>
+                        <div class="card-image">
+                            <img src="images/ms365.jpg" alt="Microsoft 365">
+                        </div>
+                    </div>
+                    <div class="nvidia-card">
+                        <div class="card-content">
+                            <h3>For businesses</h3>
+                            <p>Premium Office apps, cloud storage, and advanced security for your business.</p>
+                            <ul class="feature-list">
+                                <li>Premium Office apps</li>
+                                <li>Email and calendar</li>
+                                <li>Teamwork solutions</li>
+                                <li>Security and compliance</li>
+                            </ul>
+                            <a href="#" class="nvidia-button">Learn more</a>
+                        </div>
+                        <div class="card-image">
+                            <img src="images/msoffice.jpg" alt="Microsoft 365 for Business">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Copilot Section -->
+        <section class="section-nvidia dark">
+            <div class="section-container">
+                <div class="section-content reversed">
+                    <div class="content-text">
+                        <h2>Meet <span class="highlight">Microsoft Copilot</span></h2>
+                        <p>Your everyday AI companion that helps you save time and focus on what matters most.</p>
+                        <ul class="feature-list light">
+                            <li>Get creative help with writing and design</li>
+                            <li>Analyze data and create visualizations</li>
+                            <li>Summarize emails and documents</li>
+                            <li>Create presentations in seconds</li>
+                        </ul>
+                        <a href="copilot.html" class="nvidia-button">Explore Copilot</a>
+                    </div>
+                    <div class="content-visual">
+                        <div class="visual-container">
+                            <img src="images/copilot.webp" alt="Microsoft Copilot" class="main-visual">
+                            <div class="visual-accent top-right"></div>
+                            <div class="visual-accent bottom-left"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Windows 11 Section -->
+        <section class="section-nvidia">
+            <div class="section-container">
+                <div class="section-content">
+                    <div class="content-visual">
+                        <div class="visual-container">
+                            <img src="images/windows.jpg" alt="Windows 11" class="main-visual">
+                            <div class="visual-accent top-left"></div>
+                            <div class="visual-accent bottom-right"></div>
+                        </div>
+                    </div>
+                    <div class="content-text">
+                        <h2>Windows 11</h2>
+                        <p>Designed for hybrid work and learning, Windows 11 is the most secure Windows yet with a fresh new design and powerful new tools.</p>
+                        <ul class="feature-list">
+                            <li>Streamlined new design</li>
+                            <li>Enhanced productivity features</li>
+                            <li>Better performance</li>
+                            <li>Built-in security</li>
+                        </ul>
+                        <a href="windows.html" class="nvidia-button">See what's new</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Products Grid -->
+        <section class="products-grid-section">
+            <div class="section-container">
+                <div class="section-header">
+                    <h2>Explore Microsoft products</h2>
+                </div>
+                <div class="products-grid">
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="images/surface.jpg" alt="Surface">
+                        </div>
+                        <div class="product-info">
+                            <h3>Surface</h3>
+                            <p>Laptops and 2-in-1s with premium design and performance</p>
+                            <a href="#" class="product-link">Shop now</a>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="images/onedrive.webp" alt="OneDrive">
+                        </div>
+                        <div class="product-info">
+                            <h3>OneDrive</h3>
+                            <p>Save your files and photos to OneDrive and access them from any device, anywhere</p>
+                            <a href="#" class="product-link">Learn more</a>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="images/msoffice.jpg" alt="Office">
+                        </div>
+                        <div class="product-info">
+                            <h3>Office</h3>
+                            <p>Professional software for documents, spreadsheets, and presentations</p>
+                            <a href="office.html" class="product-link">Learn more</a>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="images/windows.jpg" alt="Windows">
+                        </div>
+                        <div class="product-info">
+                            <h3>Windows</h3>
+                            <p>Experience the latest features and security updates with Windows 11</p>
+                            <a href="windows.html" class="product-link">Explore Windows</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Business Solutions -->
+        <section class="section-nvidia dark">
+            <div class="section-container">
+                <div class="section-header">
+                    <h2>For business</h2>
+                    <p>Solutions for organizations of all sizes</p>
+                </div>
+                <div class="business-grid">
+                    <div class="business-card">
+                        <div class="business-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27,6.96 12,12.01 20.73,6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg>
+                        </div>
+                        <h3>Microsoft Cloud</h3>
+                        <p>Unlock insights, build solutions, and deliver innovation with the world's trusted enterprise cloud</p>
+                        <a href="#" class="business-link">Learn more</a>
+                    </div>
+                    <div class="business-card">
+                        <div class="business-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+                        </div>
+                        <h3>Security</h3>
+                        <p>Protect your organization with integrated security, compliance, and identity solutions</p>
+                        <a href="#" class="business-link">Learn more</a>
+                    </div>
+                    <div class="business-card">
+                        <div class="business-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>
+                        </div>
+                        <h3>Dynamics 365</h3>
+                        <p>Intelligent business applications that help you transform your operations</p>
+                        <a href="#" class="business-link">Learn more</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h3>Products</h3>
+                    <ul>
+                        <li><a href="#">Microsoft 365</a></li>
+                        <li><a href="#">Teams</a></li>
+                        <li><a href="#">Windows</a></li>
+                        <li><a href="#">Surface</a></li>
+                        <li><a href="#">Xbox</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Microsoft Store</h3>
+                    <ul>
+                        <li><a href="#">Account profile</a></li>
+                        <li><a href="#">Download Center</a></li>
+                        <li><a href="#">Returns</a></li>
+                        <li><a href="#">Order tracking</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Education</h3>
+                    <ul>
+                        <li><a href="#">Microsoft in education</a></li>
+                        <li><a href="#">Office for students</a></li>
+                        <li><a href="#">Office 365 for schools</a></li>
+                        <li><a href="#">Microsoft Azure in education</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Business</h3>
+                    <ul>
+                        <li><a href="#">Microsoft Cloud</a></li>
+                        <li><a href="#">Microsoft Security</a></li>
+                        <li><a href="#">Azure</a></li>
+                        <li><a href="#">Dynamics 365</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="language-selector">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+                    <span>English (United States)</span>
+                </div>
+                <div class="footer-links">
+                    <a href="#">Contact Microsoft</a>
+                    <a href="#">Privacy</a>
+                    <a href="#">Terms of use</a>
+                    <a href="#">Trademarks</a>
+                </div>
+                <p>&copy; Microsoft 2025</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modal -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div id="modal-body"></div>
+        </div>
+    </div>
+
+    <!-- Notification -->
+    <div id="notification" class="notification">
+        <span id="notification-text"></span>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

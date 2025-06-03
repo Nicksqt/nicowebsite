@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Microsoft Office - Productivity Apps</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Clean Microsoft-style design */
+        body {
+            background: #fafafa;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #0078d4 0%, #106ebe 100%);
+            color: white;
+            padding: 80px 20px;
+            position: relative;
+        }
+
+        .hero-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            gap: 60px;
+        }
+
+        .hero-text {
+            flex: 1;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            opacity: 0.9;
+            line-height: 1.5;
+        }
+
+        .hero-image {
+            flex: 1;
+            text-align: center;
+        }
+
+        .floating-image {
+            max-width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.12);
+        }
+
+        .cta-button {
+            background: white;
+            color: #0078d4;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 4px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+            margin-right: 15px;
+        }
+
+        .cta-button:hover {
+            background: #f3f2f1;
+            transform: translateY(-1px);
+        }
+
+        .cta-button.secondary {
+            background: transparent;
+            color: white;
+            border: 2px solid white;
+        }
+
+        .cta-button.secondary:hover {
+            background: rgba(255,255,255,0.1);
+        }
+
+        /* Office Apps Section - Clean Microsoft Style */
+        .office-section {
+            padding: 80px 20px;
+            background: white;
+        }
+
+        .office-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title-spaced {
+            text-align: center;
+            font-size: 2.5rem;
+            font-weight: 600;
+            margin-bottom: 60px;
+            color: #323130;
+        }
+
+        .office-apps-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .office-app-card {
+            background: white;
+            padding: 32px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            text-align: center;
+            transition: all 0.3s ease;
+            border: 1px solid #edebe9;
+        }
+
+        .office-app-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+        }
+
+        .office-app-icon {
+            width: 64px;
+            height: 64px;
+            margin: 0 auto 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 8px;
+        }
+
+        .office-app-icon img {
+            width: 48px;
+            height: 48px;
+            object-fit: contain;
+        }
+
+        .word-app {
+            background-color: #2b579a;
+        }
+
+        .excel-app {
+            background-color: #217346;
+        }
+
+        .powerpoint-app {
+            background-color: #d24726;
+        }
+
+        .outlook-app {
+            background-color: #0072c6;
+        }
+
+        .app-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 16px;
+            color: #323130;
+        }
+
+        .app-description {
+            font-size: 1rem;
+            color: #605e5c;
+            line-height: 1.5;
+            margin-bottom: 20px;
+        }
+
+        .app-learn-more {
+            color: #0078d4;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: color 0.3s ease;
+        }
+
+        .app-learn-more:hover {
+            color: #106ebe;
+        }
+
+        /* Features Section */
+        .products-section {
+            padding: 80px 20px;
+            background: #fafafa;
+        }
+
+        .products-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            font-weight: 600;
+            margin-bottom: 60px;
+            color: #323130;
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+        }
+
+        .product-card {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            border: 1px solid #edebe9;
+        }
+
+        .product-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+        }
+
+        .product-image {
+            height: 200px;
+            overflow: hidden;
+        }
+
+        .product-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .product-info {
+            padding: 24px;
+        }
+
+        .product-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 12px;
+            color: #323130;
+        }
+
+        .product-description {
+            color: #605e5c;
+            line-height: 1.5;
+            margin-bottom: 16px;
+        }
+
+        .product-link {
+            color: #0078d4;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        .product-link:hover {
+            color: #106ebe;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav-container">
+            <div class="logo-container">
+                <a href="index.html" class="logo">
+                    <img src="images/microsoft.png" alt="Microsoft" class="microsoft-logo">
+                </a>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html#products">Microsoft 365</a></li>
+                <li><a href="office.html">Office</a></li>
+                <li><a href="copilot.html">Copilot</a></li>
+                <li><a href="windows.html">Windows</a></li>
+                <li><a href="support.html">Support</a></li>
+            </ul>
+            <div class="user-actions">
+                <button class="search-btn" onclick="toggleSearch()">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                    <span>Search</span>
+                </button>
+                <button class="sign-in-btn" onclick="showAccountModal()">Sign in</button>
+                <div class="search-container" id="searchContainer">
+                    <input type="text" class="search-input" placeholder="Search Microsoft products..." onkeypress="handleSearch(event)">
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1>Microsoft Office</h1>
+                    <p>Get the classic Office apps you know and love – Word, Excel, PowerPoint, and Outlook. Create, collaborate, and get things done from anywhere.</p>
+                    <div class="hero-buttons">
+                        <a href="#" class="cta-button">Buy Office</a>
+                        <a href="#" class="cta-button secondary">Try for free</a>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <img src="images/msoffice.jpg" alt="Microsoft Office" class="floating-image">
+                </div>
+            </div>
+        </section>
+
+        <!-- Office Apps Section -->
+        <section class="office-section">
+            <div class="office-container">
+                <h2 class="section-title-spaced">Get more done with Microsoft Office apps</h2>
+                
+                <div class="office-apps-grid">
+                    <div class="office-app-card">
+                        <div class="office-app-icon word-app">
+                            <img src="images/word.jpg" alt="Microsoft Word">
+                        </div>
+                        <h3 class="app-title">Word</h3>
+                        <p class="app-description">Create and collaborate on professional-looking documents, reports, and letters with AI-powered writing assistance.</p>
+                        <a href="#" class="app-learn-more">Learn more</a>
+                    </div>
+                    
+                    <div class="office-app-card">
+                        <div class="office-app-icon excel-app">
+                            <img src="images/excel.jpg" alt="Microsoft Excel">
+                        </div>
+                        <h3 class="app-title">Excel</h3>
+                        <p class="app-description">Organize data, track finances, and gain insights with powerful spreadsheets and intelligent analysis tools.</p>
+                        <a href="#" class="app-learn-more">Learn more</a>
+                    </div>
+                    
+                    <div class="office-app-card">
+                        <div class="office-app-icon powerpoint-app">
+                            <img src="images/ppt.jpg" alt="Microsoft PowerPoint">
+                        </div>
+                        <h3 class="app-title">PowerPoint</h3>
+                        <p class="app-description">Design and deliver compelling presentations that captivate your audience with professional templates.</p>
+                        <a href="#" class="app-learn-more">Learn more</a>
+                    </div>
+                    
+                    <div class="office-app-card">
+                        <div class="office-app-icon outlook-app">
+                            <img src="images/outlook.jpg" alt="Microsoft Outlook">
+                        </div>
+                        <h3 class="app-title">Outlook</h3>
+                        <p class="app-description">Stay connected and organized with email, calendar, and contacts all in one integrated platform.</p>
+                        <a href="#" class="app-learn-more">Learn more</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section class="products-section">
+            <div class="products-container">
+                <h2 class="section-title">Why choose Microsoft Office?</h2>
+                <div class="products-grid">
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="images/msofficesupport.jpg" alt="Office Support">
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">Always up to date</h3>
+                            <p class="product-description">Get the latest features and security updates automatically with Office 365 subscription.</p>
+                            <a href="#" class="product-link">Learn more</a>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="images/onedrive.webp" alt="Cloud Storage">
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">Cloud storage included</h3>
+                            <p class="product-description">Access your files from anywhere with 1TB of OneDrive cloud storage included.</p>
+                            <a href="#" class="product-link">Learn more</a>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="images/teams.png" alt="Collaboration">
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">Real-time collaboration</h3>
+                            <p class="product-description">Work together in real-time with colleagues using built-in sharing and co-authoring.</p>
+                            <a href="#" class="product-link">Learn more</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h3>Office Apps</h3>
+                    <ul>
+                        <li><a href="#">Word</a></li>
+                        <li><a href="#">Excel</a></li>
+                        <li><a href="#">PowerPoint</a></li>
+                        <li><a href="#">Outlook</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Plans & Pricing</h3>
+                    <ul>
+                        <li><a href="#">Office 365 Personal</a></li>
+                        <li><a href="#">Office 365 Family</a></li>
+                        <li><a href="#">Office 365 Business</a></li>
+                        <li><a href="#">Compare plans</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Resources</h3>
+                    <ul>
+                        <li><a href="#">Templates</a></li>
+                        <li><a href="#">Training</a></li>
+                        <li><a href="#">Support</a></li>
+                        <li><a href="#">What's new</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Microsoft Corporation. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modal -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div id="modal-body"></div>
+        </div>
+    </div>
+
+    <!-- Notification -->
+    <div id="notification" class="notification">
+        <span id="notification-text"></span>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

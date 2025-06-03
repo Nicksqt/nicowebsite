@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Microsoft Copilot - Your AI Assistant</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Clean Microsoft-style design */
+        body {
+            background: #fafafa;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #6264a7 0%, #5a5fc7 100%);
+            color: white;
+            padding: 80px 20px;
+            position: relative;
+        }
+
+        .hero-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            gap: 60px;
+        }
+
+        .hero-text {
+            flex: 1;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            opacity: 0.9;
+            line-height: 1.5;
+        }
+
+        .hero-image {
+            flex: 1;
+            text-align: center;
+        }
+
+        .floating-image {
+            max-width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.12);
+        }
+
+        .cta-button {
+            background: white;
+            color: #6264a7;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 4px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+            margin-right: 15px;
+        }
+
+        .cta-button:hover {
+            background: #f3f2f1;
+            transform: translateY(-1px);
+        }
+
+        .cta-button.secondary {
+            background: transparent;
+            color: white;
+            border: 2px solid white;
+        }
+
+        .cta-button.secondary:hover {
+            background: rgba(255,255,255,0.1);
+        }
+
+        /* Copilot Features Section */
+        .products-section {
+            padding: 80px 20px;
+            background: white;
+        }
+
+        .products-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            font-weight: 600;
+            margin-bottom: 60px;
+            color: #323130;
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+        }
+
+        .product-card {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            border: 1px solid #edebe9;
+        }
+
+        .product-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+        }
+
+        .product-image {
+            height: 200px;
+            overflow: hidden;
+        }
+
+        .product-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .product-info {
+            padding: 24px;
+        }
+
+        .product-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 12px;
+            color: #323130;
+        }
+
+        .product-description {
+            color: #605e5c;
+            line-height: 1.5;
+        }
+
+        /* Copilot in Apps Section */
+        .office-section {
+            padding: 80px 20px;
+            background: #fafafa;
+        }
+
+        .office-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            font-size: 1.2rem;
+            color: #605e5c;
+            margin-bottom: 50px;
+        }
+
+        .office-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .office-card {
+            background: white;
+            padding: 32px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            text-align: center;
+            transition: all 0.3s ease;
+            border: 1px solid #edebe9;
+        }
+
+        .office-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+        }
+
+        .office-icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .office-icon img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .office-card h3 {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 16px;
+            color: #323130;
+        }
+
+        .office-card p {
+            color: #605e5c;
+            line-height: 1.5;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav-container">
+            <div class="logo-container">
+                <a href="index.html" class="logo">
+                    <img src="images/microsoft.png" alt="Microsoft" class="microsoft-logo">
+                </a>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html#products">Microsoft 365</a></li>
+                <li><a href="office.html">Office</a></li>
+                <li><a href="copilot.html">Copilot</a></li>
+                <li><a href="windows.html">Windows</a></li>
+                <li><a href="support.html">Support</a></li>
+            </ul>
+            <div class="user-actions">
+                <button class="search-btn" onclick="toggleSearch()">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                    <span>Search</span>
+                </button>
+                <button class="sign-in-btn" onclick="showAccountModal()">Sign in</button>
+                <div class="search-container" id="searchContainer">
+                    <input type="text" class="search-input" placeholder="Search Microsoft products..." onkeypress="handleSearch(event)">
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1>Microsoft Copilot</h1>
+                    <p>Your everyday AI companion that helps you be more creative, productive, and connected to the people and things around you.</p>
+                    <div class="hero-buttons">
+                        <a href="#" class="cta-button">Try Copilot</a>
+                        <a href="#" class="cta-button secondary">Learn more</a>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <img src="images/copilot.webp" alt="Microsoft Copilot" class="floating-image">
+                </div>
+            </div>
+        </section>
+
+        <!-- Copilot Features Section -->
+        <section class="products-section">
+            <div class="products-container">
+                <h2 class="section-title">What can Copilot do for you?</h2>
+                <div class="products-grid">
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="images/copilotcontent.jpg" alt="Content Creation">
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">Create content</h3>
+                            <p class="product-description">Generate text, write emails, create presentations, and brainstorm ideas with AI assistance.</p>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="images/copilotinaction.jpg" alt="Copilot in Action">
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">Boost productivity</h3>
+                            <p class="product-description">Automate repetitive tasks, analyze data, and get intelligent suggestions to work smarter.</p>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="images/ms365.jpg" alt="Integration">
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">Seamless integration</h3>
+                            <p class="product-description">Works across all your favorite Microsoft apps - Word, Excel, PowerPoint, Outlook, and Teams.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Copilot in Apps Section -->
+        <section class="office-section">
+            <div class="office-container">
+                <h2 class="section-title">Copilot in Microsoft Apps</h2>
+                <p class="section-subtitle">AI-powered assistance in every app you use</p>
+                
+                <div class="office-grid">
+                    <div class="office-card">
+                        <div class="office-icon">
+                            <img src="images/word1.avif" alt="Copilot in Word">
+                        </div>
+                        <h3>Copilot in Word</h3>
+                        <p>Write better documents with AI-powered writing assistance, content generation, and editing suggestions.</p>
+                    </div>
+                    
+                    <div class="office-card">
+                        <div class="office-icon">
+                            <img src="images/excel1.avif" alt="Copilot in Excel">
+                        </div>
+                        <h3>Copilot in Excel</h3>
+                        <p>Analyze data faster with natural language queries, automated insights, and intelligent chart creation.</p>
+                    </div>
+                    
+                    <div class="office-card">
+                        <div class="office-icon">
+                            <img src="images/ppt1.avif" alt="Copilot in PowerPoint">
+                        </div>
+                        <h3>Copilot in PowerPoint</h3>
+                        <p>Create stunning presentations with AI-generated content, design suggestions, and speaker notes.</p>
+                    </div>
+                    
+                    <div class="office-card">
+                        <div class="office-icon">
+                            <img src="images/outlook1.avif" alt="Copilot in Outlook">
+                        </div>
+                        <h3>Copilot in Outlook</h3>
+                        <p>Manage email efficiently with smart replies, meeting summaries, and intelligent scheduling assistance.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h3>Copilot</h3>
+                    <ul>
+                        <li><a href="#">What is Copilot?</a></li>
+                        <li><a href="#">Copilot Pro</a></li>
+                        <li><a href="#">Copilot for Business</a></li>
+                        <li><a href="#">Privacy & Security</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Get Started</h3>
+                    <ul>
+                        <li><a href="#">Download Copilot</a></li>
+                        <li><a href="#">Copilot Training</a></li>
+                        <li><a href="#">Tips & Tricks</a></li>
+                        <li><a href="#">Community</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Support</h3>
+                    <ul>
+                        <li><a href="#">Help Center</a></li>
+                        <li><a href="#">Contact Support</a></li>
+                        <li><a href="#">Known Issues</a></li>
+                        <li><a href="#">Feedback</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Microsoft Corporation. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modal -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div id="modal-body"></div>
+        </div>
+    </div>
+
+    <!-- Notification -->
+    <div id="notification" class="notification">
+        <span id="notification-text"></span>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
